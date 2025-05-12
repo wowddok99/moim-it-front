@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { FaUserLarge } from "react-icons/fa6";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Header() {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
     return (
         <div className="flex items-center justify-between px-[120px] border-b border-b-gray-100">
             {/* 로고 */}
@@ -41,7 +45,24 @@ export default function Header() {
             <div className="flex items-center gap-[22px]">
                 <FaUserLarge className="text-[20px] cursor-pointer" />
                 <FaMagnifyingGlass className="text-[20px] cursor-pointer" />
-                <AiOutlineMenu className="text-[25px] cursor-pointer" />
+                <AiOutlineMenu className="text-[25px] cursor-pointer" onClick={() => setSidebarOpen(true)} />
+            </div>
+
+            {/* 오버레이 */}
+            <div
+                className={`fixed top-0 left-0 h-full w-full bg-black z-40 transition-opacity duration-300 ease-in-out ${
+                    sidebarOpen ? "opacity-30 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+            />
+
+            {/* 사이드바 */}
+            <div
+                className={`fixed top-0 right-0 h-full w-[320px] bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out ${
+                    sidebarOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+            >
+                {/* 사이드바 내용 */}
             </div>
         </div>
     );
