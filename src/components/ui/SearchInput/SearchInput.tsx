@@ -1,5 +1,10 @@
 import { FaMagnifyingGlass } from "react-icons/fa6";
-export default function SearchInput({ placeholder = "검색어를 입력하세요", ...props }) {
+import {InputHTMLAttributes} from "react";
+
+interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    placeholder?: string;
+}
+export default function SearchInput({ placeholder = "검색어를 입력하세요", ...props }: SearchInputProps) {
     return (
         <div className="flex items-center px-3 border rounded-[15px] bg-white shadow-sm">
             <FaMagnifyingGlass className="text-gray-400 mr-2" />
