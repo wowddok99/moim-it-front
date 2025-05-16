@@ -9,7 +9,7 @@ export default function Header() {
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
     return (
-        <div className="flex min-w-[1200px] items-center justify-center gap-[243px] border-b border-b-gray-100">
+        <div className="flex min-w-[1200px] items-center justify-center gap-[150px] border-b border-b-gray-100">
             {/* 로고 */}
             <div className="flex gap-[15px] cursor-pointer">
                 <div className="flex gap-[2px] text-[25px]">

@@ -11,7 +11,7 @@ export default function MainMeetingCard({ title, host, price }: MainMeetingCardP
             <div
                 className="
                     flex flex-col
-                    w-[320px] h-[200px]
+                    w-[274px] h-[200px]
                     px-[25px] py-[25px]
                     border rounded-[15px]
                     cursor-pointer
